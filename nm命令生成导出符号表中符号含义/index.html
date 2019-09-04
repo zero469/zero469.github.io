@@ -55,28 +55,33 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Zero469&#39;s Blog">
-<meta property="og:url" content="https://zero469.github.io/index.html">
+  <meta name="description" content="##符号表  符号表是一种用于语言翻译器（例如编译器和解释器）中的数据结构。在符号表中，程序源代码中的每个标识符都和它的声明或使用信息绑定在一起，比如其数据类型、作用域以及内存地址。 符号表只记录静态存储的符号，如静态变量，全局变量等  ##全局变量和static变量  不同变量的主要区别是存储位置和作用域的不同 全局变量是定义在所有函数外部的变量，作用域是整个程序的所有代码文件 局部变量是定义在">
+<meta name="keywords" content="C语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nm命令生成导出符号表中符号含义">
+<meta property="og:url" content="https://zero469.github.io/nm命令生成导出符号表中符号含义/index.html">
 <meta property="og:site_name" content="Zero469&#39;s Blog">
+<meta property="og:description" content="##符号表  符号表是一种用于语言翻译器（例如编译器和解释器）中的数据结构。在符号表中，程序源代码中的每个标识符都和它的声明或使用信息绑定在一起，比如其数据类型、作用域以及内存地址。 符号表只记录静态存储的符号，如静态变量，全局变量等  ##全局变量和static变量  不同变量的主要区别是存储位置和作用域的不同 全局变量是定义在所有函数外部的变量，作用域是整个程序的所有代码文件 局部变量是定义在">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-04T06:37:15.910Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zero469&#39;s Blog">
-  <link rel="canonical" href="https://zero469.github.io/">
+<meta name="twitter:title" content="nm命令生成导出符号表中符号含义">
+<meta name="twitter:description" content="##符号表  符号表是一种用于语言翻译器（例如编译器和解释器）中的数据结构。在符号表中，程序源代码中的每个标识符都和它的声明或使用信息绑定在一起，比如其数据类型、作用域以及内存地址。 符号表只记录静态存储的符号，如静态变量，全局变量等  ##全局变量和static变量  不同变量的主要区别是存储位置和作用域的不同 全局变量是定义在所有函数外部的变量，作用域是整个程序的所有代码文件 局部变量是定义在">
+  <link rel="canonical" href="https://zero469.github.io/nm命令生成导出符号表中符号含义/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Zero469's Blog</title>
+  <title>nm命令生成导出符号表中符号含义 | Zero469's Blog</title>
   
 
 
@@ -184,12 +189,13 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+
   <div id="posts" class="posts-expand">
-        <article itemscope itemtype="http://schema.org/Article">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block home">
+  <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="https://zero469.github.io/nm命令生成导出符号表中符号含义/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -202,9 +208,8 @@
       <meta itemprop="name" content="Zero469's Blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/nm命令生成导出符号表中符号含义/" class="post-title-link" itemprop="url">nm命令生成导出符号表中符号含义</a>
+        <h1 class="post-title" itemprop="name headline">nm命令生成导出符号表中符号含义
+
           
         </h1>
 
@@ -238,7 +243,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>##符号表</p>
+        <p>##符号表</p>
 <ul>
 <li><strong>符号表是一种用于语言翻译器（例如编译器和解释器）中的数据结构。在符号表中，程序源代码中的每个标识符都和它的声明或使用信息绑定在一起，比如其数据类型、作用域以及内存地址。</strong></li>
 <li><strong>符号表只记录静态存储的符号，如静态变量，全局变量等</strong></li>
@@ -259,108 +264,52 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> global_var;                         <span class="comment">//未初始化但被引用过的的全局变量</span></span><br><span class="line"><span class="keyword">int</span> global_var_init = <span class="number">26</span>;               <span class="comment">//初始化的全局变量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> static_var;                  <span class="comment">//未初始化的静态变量</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> static_var_init = <span class="number">25</span>;        <span class="comment">//初始化的静态变量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> extern_var;                  <span class="comment">//外部变量</span></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">int</span> <span class="title">extern_function</span><span class="params">(<span class="keyword">int</span>)</span></span>;        <span class="comment">//外部函数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">static_function</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span><span class="comment">//静态函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> local_automatic_var;            <span class="comment">//局部变量，在stack空间，不出现在符号表中</span></span><br><span class="line"></span><br><span class="line">	local_automatic_var = x + y;</span><br><span class="line">	<span class="keyword">return</span> local_automatic_var;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">global_function</span><span class="params">(<span class="keyword">int</span> p)</span>              <span class="comment">//非静态函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> local_static_var;        <span class="comment">//未初始化的局部静态变量</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> local_static_var_init = <span class="number">5</span>;<span class="comment">//初始化的局部静态变量</span></span><br><span class="line">	</span><br><span class="line">	local_static_var = static_function(local_static_var_init, p);	</span><br><span class="line">	<span class="keyword">return</span> local_static_var;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	static_var = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	global_var = global_function(<span class="number">2</span>);</span><br><span class="line">	extern_var = extern_function(<span class="number">3</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">                 U extern_function</span><br><span class="line">                 U extern_var</span><br><span class="line"><span class="number">000000000000001</span>a T global_function</span><br><span class="line"><span class="number">0000000000000004</span> C global_var</span><br><span class="line"><span class="number">0000000000000000</span> D global_var_init</span><br><span class="line"><span class="number">0000000000000004</span> b local_static_var<span class="number">.1736</span></span><br><span class="line"><span class="number">0000000000000008</span> d local_static_var_init<span class="number">.1737</span></span><br><span class="line"><span class="number">0000000000000045</span> T main</span><br><span class="line"><span class="number">0000000000000000</span> t static_function</span><br><span class="line"><span class="number">0000000000000000</span> b static_var</span><br><span class="line"><span class="number">0000000000000004</span> d static_var_init</span><br></pre></td></tr></table></figure>
 
-        
-      
     </div>
 
     
     
     
+        
+      
+
       <footer class="post-footer">
-          <div class="post-eof"></div>
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/C语言/" rel="tag"># C语言</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/hello-world/" rel="next" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
       </footer>
+    
   </div>
   
   
   
   </article>
 
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://zero469.github.io/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zero469">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zero469's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
-
-              
-                
-              
-
-              <time title="Erstellt: 2019-03-29 23:59:52 / Geändert am: 08:46:55" itemprop="dateCreated datePublished" datetime="2019-03-29T23:59:52+08:00">2019-03-29</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
   </div>
-  
-  
-  
-  </article>
-
-    
-  </div>
-
-  
 
 
           </div>
@@ -379,6 +328,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
