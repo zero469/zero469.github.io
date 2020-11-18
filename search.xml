@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>windows端口占用处理</title>
+      <link href="/windows%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E5%A4%84%E7%90%86/"/>
+      <url>/windows%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E5%A4%84%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano|findstr "8889"</span><br><span class="line">TCP    0.0.0.0:8889           0.0.0.0:0              LISTENING       23440</span><br><span class="line">可以看出8889端口当前被23440号进程占用</span><br><span class="line">tasklist|findstr "23440"</span><br><span class="line">__debug_bin                  23440 Console                    1      6,308 K</span><br><span class="line">由此可知23440对应的进程为_debug_bin_，将该进程终止就可以释放端口了</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git 常用命令</title>
       <link href="/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
       <url>/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
